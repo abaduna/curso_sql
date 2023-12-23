@@ -1,0 +1,28 @@
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50)  not null,
+  `edad` int  not null,
+  `email` varchar(100) not null,
+  PRIMARY KEY (`id`)
+); 
+
+insert into user (name, edad, email) values ("oscar",25,"oscar@gmail.com");
+insert into user (name, edad, email) values ("layla",15,"layla@gmail.com");
+insert into user (name, edad, email) values ("nicolas",36,"nicolas@gmail.com");
+insert into user (name, edad, email) values ("chamchito",7,"chamchitor@gmail.com");
+
+select  * FROM user;
+-- ver con el limite de 3
+select * from user limit 3;
+-- por una restricion or | and | != (distinto) | between | like
+select * from user where edad > 15 or email = "oscar@gmail.com";
+-- between
+select * from user where edad between 15 and 30;
+select * from user where email like "%@gmail%";
+select * from user where email like "%@gmail.com";
+-- ordendar por acesendete decendente
+select * from user order by edad asc;
+select * from user order by edad desc;
+select max(edad) as mayor from user;
+-- selecionar las colummnas requeridas
+select id,name from user;

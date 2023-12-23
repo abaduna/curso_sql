@@ -1,0 +1,37 @@
+;
+USE holamundo;
+-- c create crear
+create table animales (
+id int,
+tipo varchar(255),
+estado varchar(255),
+primary key (id)
+);
+-- modificar una columna
+alter table animales modify column id int auto_increment;
+ALTER TABLE animales
+add COLUMN estado varchar(255);
+-- insert into animales (tipo,estado) values ("chanchito","feliz");
+
+-- comentario
+show create table animales;
+CREATE TABLE `animales` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(255) DEFAULT NULL,
+  `estado` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+); 
+-- colocar valores en la tabla
+insert into animales (tipo,estado) values ("chanchito","feliz");
+insert into animales (tipo,estado) values ("dragon","feliz");
+insert into animales (tipo,estado) values ("pollito","triste");
+-- r read
+select  * FROM animales;
+select  * FROM animales where id=3;
+select  * FROM animales where estado ="triste" and tipo="dragon";
+-- u update no es un put por que no me entrega toda la informacion solo la que cambia
+update animales SET estado = "triste" where id = 3;
+-- d deletd
+delete from  animales where id=3;
+-- u actualizar un valor up date 
+update animales set estado = "feliz" where id=4;
